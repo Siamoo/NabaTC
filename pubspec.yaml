@@ -36,6 +36,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.6
   flutter_facebook_auth: ^3.5.0
+  flutter_social_button: ^1.1.4+1
   google_sign_in: ^6.2.1
   meta: ^1.12.0
   pin_code_fields: ^8.0.1
@@ -55,8 +56,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - asset/images/
+  assets:
+    - asset/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
