@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:firebase1/Features/login/presntation/views/login_page.dart';
+import 'package:firebase1/Features/login/presntation/views/sign_page.dart';
 import 'package:firebase1/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -39,6 +40,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         routes: {
           'LoginPage': (context) => const LoginPage(),
+          'SignPage': (context) => const SignPage(),
+
           
         },
         debugShowCheckedModeBanner: false,

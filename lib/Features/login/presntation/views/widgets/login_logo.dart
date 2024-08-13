@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 class LoginLogo extends StatelessWidget {
   const LoginLogo({
     super.key,
-    required this.screenWidth,
+    required this.screenWidth, required this.logPath,
   });
 
   final double screenWidth;
+  final String logPath;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,8 @@ class LoginLogo extends StatelessWidget {
         width: screenWidth * .5,
         height: screenWidth * .5,
         decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage('asset/images/login.jpg'),
+          image:  DecorationImage(
+            image: AssetImage(logPath),
             fit: BoxFit.fill,
           ),
           border: Border.all(

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class LoginAndSigninEmailTFF extends StatelessWidget {
-  const LoginAndSigninEmailTFF({
+class SignPasswordTFF extends StatelessWidget {
+  const SignPasswordTFF({
     super.key,
-    required this.emailController,
+    required this.passwordController,
   });
 
-  final TextEditingController emailController;
+  final TextEditingController passwordController;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: emailController,
+      controller: passwordController,
       decoration: const InputDecoration(
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xff00dfc0)),
@@ -19,12 +19,15 @@ class LoginAndSigninEmailTFF extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xff00dfc0)),
         ),
-        hintText: 'Enter your email',
+        hintText: 'Enter your password',
       ),
-      keyboardType: TextInputType.emailAddress,
+      obscureText: true,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your email';
+          return 'Please enter your password';
+        }
+        if (value.length < 6) {
+          return 'Password must be at least 6 characters long';
         }
         return null;
       },

@@ -5,12 +5,13 @@ class ElevatedButtonCustom extends StatelessWidget {
   const ElevatedButtonCustom({
     super.key,
     required this.emailController,
-    required this.passwordController, required this.screenWidth,
+    required this.passwordController, required this.screenWidth, required this.text,
   });
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final double screenWidth ;
+  final String text ;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class ElevatedButtonCustom extends StatelessWidget {
         onPressed: () async {
           if (Form.of(context).validate()) { }
         },
-        child: const Text('Log In'),
+        child: Text(text),
       ),
     );
   }
