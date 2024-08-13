@@ -1,4 +1,4 @@
-import 'package:firebase1/Features/login/presntation/views/widgets/elevated_button_custome.dart';
+import 'package:firebase1/Features/login/presntation/views/widgets/signin_elevated_button_custome.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_email_tff.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_password_tff.dart';
@@ -39,10 +39,10 @@ class LoginPageBody extends StatelessWidget {
                 const SizedBox(height: 8),
                 LoginPasswordTFF(passwordController: passwordController),
                 const SizedBox(height: 20),
-                ElevatedButtonCustom(
+                SigninElevatedButtonCustom(
                   emailController: emailController,
                   passwordController: passwordController,
-                  screenWidth: screenWidth, text: 'Log in',
+                  screenWidth: screenWidth, text: 'Log in', isLoading: true,
                 ),
                 Center(
                   child: TextButton(
