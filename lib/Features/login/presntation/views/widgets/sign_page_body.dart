@@ -2,9 +2,9 @@ import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_
 import 'package:firebase1/Features/login/presntation/views/widgets/signin_elevated_button_custome.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_email_TFF.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.dart';
-import 'package:firebase1/Features/login/presntation/views/widgets/login_social_icons.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/sign_confirm_password_tff.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/sign_password_tff.dart';
+import 'package:firebase1/Features/login/presntation/views/widgets/signin_social_icons.dart';
 import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,8 +31,11 @@ class SignPageBody extends StatelessWidget {
             child: BlocConsumer<SigninCubit, SigninState>(
               listener: (context, state) {
                 if (state is SigninSuccess) {
-                  showSnackBarHelpers(context, 'chack your email');
+                  showSnackBarHelpers(context, state.succMessage);
                   Navigator.pushNamed(context, 'LoginPage');
+                } else if (state is SigninGoogleSuccess) {
+                  showSnackBarHelpers(context, state.succMessage);
+                  Navigator.pushReplacementNamed(context, 'HomePage');
                 } else if (state is SigninFailure) {
                   showSnackBarHelpers(context, state.errMessage);
                 }
@@ -79,7 +82,7 @@ class SignPageBody extends StatelessWidget {
                         isLoading: (state is SigninLoading) ? true : false,
                       ),
                       const SizedBox(height: 30),
-                      const LoginSocialIcons(),
+                       SigninSocialIcons(isLoading: (state is SigninLoading) ? true : false, screenWidth: screenWidth,),
                     ],
                   ),
                 );
