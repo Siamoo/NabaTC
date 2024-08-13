@@ -1,9 +1,11 @@
 import 'dart:developer';
 import 'package:firebase1/Features/Home/presntation/views/home_page.dart';
-import 'package:firebase1/Features/login/presntation/manger/cubit/signin_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/login_cubit/login_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/login_page.dart';
 import 'package:firebase1/Features/login/presntation/views/sign_page.dart';
 import 'package:firebase1/firebase_options.dart';
+import 'package:firebase1/simple_bloc_observer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 
@@ -41,10 +43,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [                          
-        BlocProvider(                       
-          create: (context) => SigninCubit(), 
+      providers: [
+        BlocProvider(
+          create: (context) => SigninCubit(),
         ),
+        BlocProvider(
+          create: (context) => LoginCubit(),
+        )
       ],
       child: MaterialApp(
         routes: {
@@ -65,6 +70,8 @@ class MangeUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const LoginPage();
+    return (FirebaseAuth.instance.currentUser?.emailVerified ?? false)
+        ? const HomePage()
+        : const LoginPage();
   }
 }

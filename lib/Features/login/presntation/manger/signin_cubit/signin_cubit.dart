@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +21,6 @@ class SigninCubit extends Cubit<SigninState> {
       );
 
       credential.user!.sendEmailVerification();
-      log('chack your email');
       emit(SigninSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

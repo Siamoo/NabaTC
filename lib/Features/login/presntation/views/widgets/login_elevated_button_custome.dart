@@ -1,4 +1,6 @@
+import 'package:firebase1/Features/login/presntation/manger/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginElevatedButtonCustom extends StatelessWidget {
   const LoginElevatedButtonCustom({
@@ -24,7 +26,12 @@ class LoginElevatedButtonCustom extends StatelessWidget {
             backgroundColor: const Color(0xff00dfc0),
             foregroundColor: Colors.black),
         onPressed: () async {
-          if (Form.of(context).validate()) {}
+          if (Form.of(context).validate()) {
+            BlocProvider.of<LoginCubit>(context).login(
+              email: emailController.text,
+              password: passwordController.text,
+            );
+          }
         },
         child: isLoading
             ? const SizedBox(

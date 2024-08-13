@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePageBody extends StatelessWidget {
@@ -6,10 +7,16 @@ class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Column(
-        children: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.logout))
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(onPressed: (){
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, 'LoginPage');
+            }, icon: const Icon(Icons.logout))
+          ],
+        ),
       ),
     );
   }

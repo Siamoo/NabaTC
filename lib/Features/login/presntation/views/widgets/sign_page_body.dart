@@ -1,4 +1,4 @@
-import 'package:firebase1/Features/login/presntation/manger/cubit/signin_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/signin_elevated_button_custome.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_email_TFF.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.dart';
@@ -17,7 +17,8 @@ class SignPageBody extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
-        final TextEditingController consfirmPasswordController = TextEditingController();
+    final TextEditingController consfirmPasswordController =
+        TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -30,6 +31,7 @@ class SignPageBody extends StatelessWidget {
             child: BlocConsumer<SigninCubit, SigninState>(
               listener: (context, state) {
                 if (state is SigninSuccess) {
+                  showSnackBarHelpers(context, 'chack your email');
                   Navigator.pushNamed(context, 'LoginPage');
                 } else if (state is SigninFailure) {
                   showSnackBarHelpers(context, state.errMessage);
@@ -65,7 +67,9 @@ class SignPageBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       SignConfirmPasswordTFF(
-                          passwordController: passwordController, consfirmPasswordController: consfirmPasswordController,),
+                        passwordController: passwordController,
+                        consfirmPasswordController: consfirmPasswordController,
+                      ),
                       const SizedBox(height: 20),
                       SigninElevatedButtonCustom(
                         emailController: emailController,

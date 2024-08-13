@@ -1,4 +1,4 @@
-import 'package:firebase1/Features/login/presntation/manger/cubit/signin_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
