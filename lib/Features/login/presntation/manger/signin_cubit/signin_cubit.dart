@@ -35,29 +35,5 @@ class SigninCubit extends Cubit<SigninState> {
     }
   }
 
-  Future signInWithGoogle() async {
-    emit(SigninLoading());
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-    if (googleUser == null) {
-      return; 
-    } else {
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
-
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      emit(SigninGoogleSuccess(succMessage: 'Log in with Google success'));
-
-      return await FirebaseAuth.instance.signInWithCredential(credential);
-    }
-  }
 }
-
-// if (e.code == 'weak-password') {
-//         log('The password provided is too weak.');
-//       } else if (e.code == 'email-already-in-use') {
-//         log('The account already exists for that email.');
-//       }

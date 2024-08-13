@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:meta/meta.dart';
 
@@ -31,6 +32,27 @@ class LoginCubit extends Cubit<LoginState> {
         emit(
             LoginFailure(errMessage: 'Wrong password provided for that user.'));
       }
+    }
+  }
+
+
+    Future signInWithGoogle() async {
+    emit(LoginLoading());
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    if (googleUser == null) {
+      return; 
+    } else {
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      emit(SigninGoogleSuccess(succMessage: 'Log in with Google success'));
+
+      return await FirebaseAuth.instance.signInWithCredential(credential);
     }
   }
 }

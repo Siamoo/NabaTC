@@ -26,7 +26,10 @@ class LoginPageBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocConsumer<LoginCubit, LoginState>(
               listener: (context, state) {
-                 if (state is LoginSuccess) {
+                if (state is LoginSuccess) {
+                  Navigator.pushReplacementNamed(context, 'HomePage');
+                } else if (state is SigninGoogleSuccess) {
+                  showSnackBarHelpers(context, state.succMessage);
                   Navigator.pushReplacementNamed(context, 'HomePage');
                 } else if (state is LoginFailure) {
                   showSnackBarHelpers(context, state.errMessage);
@@ -65,8 +68,8 @@ class LoginPageBody extends StatelessWidget {
                       ),
                       Center(
                         child: TextButton(
-                          style:
-                              TextButton.styleFrom(foregroundColor: Colors.white),
+                          style: TextButton.styleFrom(
+                              foregroundColor: Colors.white),
                           onPressed: () {
                             Navigator.pushNamed(context, 'SignPage');
                           },
@@ -76,7 +79,10 @@ class LoginPageBody extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 50),
-                      const LoginSocialIcons(),
+                      LoginSocialIcons(
+                        isLoading: (state is LoginLoading) ? true : false,
+                        screenWidth: screenWidth,
+                      ),
                     ],
                   ),
                 );
