@@ -19,7 +19,7 @@ final double screenWidth;
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         FlutterSocialButton(
-          onTap: () {},
+          onTap: () {BlocProvider.of<LoginCubit>(context).signInWithFacebook();},
           mini: true,
           buttonType: ButtonType.facebook,
         ),

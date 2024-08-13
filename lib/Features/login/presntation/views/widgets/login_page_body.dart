@@ -28,10 +28,13 @@ class LoginPageBody extends StatelessWidget {
               listener: (context, state) {
                 if (state is LoginSuccess) {
                   Navigator.pushReplacementNamed(context, 'HomePage');
-                } else if (state is SigninGoogleSuccess) {
+                } else if (state is LoginGoogleSuccess) {
                   showSnackBarHelpers(context, state.succMessage);
                   Navigator.pushReplacementNamed(context, 'HomePage');
-                } else if (state is LoginFailure) {
+                } else if (state is LoginFaceBookleSuccess) {
+                  showSnackBarHelpers(context, state.succMessage);
+                  Navigator.pushReplacementNamed(context, 'HomePage');
+                }  else if (state is LoginFailure) {
                   showSnackBarHelpers(context, state.errMessage);
                 }
               },

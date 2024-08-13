@@ -6,10 +6,16 @@ sealed class LoginState {}
 final class LoginInitial extends LoginState {}
 final class LoginSuccess extends LoginState {}
 final class LoginLoading extends LoginState {}
-final class SigninGoogleSuccess extends LoginState {
+final class LoginGoogleSuccess extends LoginState {
   final String succMessage;
 
-  SigninGoogleSuccess({required this.succMessage});
+  LoginGoogleSuccess({required this.succMessage});
+}
+final class LoginFaceBookleSuccess extends LoginState {
+  final String succMessage;
+
+  LoginFaceBookleSuccess({required this.succMessage});
+
 }
 final class LoginFailure extends LoginState {
     final String errMessage;
