@@ -1,4 +1,4 @@
-import 'package:firebase1/Features/login/presntation/manger/login_cubit/login_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/login%20cubit/login_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_elevated_button_custome.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_email_tff.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.dart';

@@ -1,6 +1,7 @@
 import 'package:firebase1/Features/Home/presntation/views/home_page.dart';
-import 'package:firebase1/Features/login/presntation/manger/login_cubit/login_cubit.dart';
-import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/login%20cubit/login_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/phone%20cubit/phone_cubit.dart';
+import 'package:firebase1/Features/login/presntation/manger/signin%20cubit/signin_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/login_page.dart';
 import 'package:firebase1/Features/login/presntation/views/phone_page.dart';
 import 'package:firebase1/Features/login/presntation/views/sign_page.dart';
@@ -34,7 +35,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LoginCubit(),
-        )
+        ),
+        BlocProvider(
+          create: (context) => PhoneCubit(),
+        ),
       ],
       child: MaterialApp(
         routes: {
