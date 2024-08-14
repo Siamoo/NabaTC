@@ -21,6 +21,7 @@ class OtpPageState extends State<OtpPage> {
   int counterTime = 60;
   late Timer timer;
 
+
   @override
   void initState() {
     super.initState();
@@ -66,20 +67,23 @@ class OtpPageState extends State<OtpPage> {
             }
           },
           builder: (context, state) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OTPText(widget: widget),
-                const SizedBox(height: 20),
-                OTPTextTimer(counterTime: counterTime),
-                const SizedBox(height: 20),
-                OTPPinCodeTextField(otpController: otpController),
-                const SizedBox(height: 20),
-                OTPElevatedButton(
-                  otpController: otpController,
-                  isLoading: (state is PhoneLoading) ? true : false,
-                ),
-              ],
+            return AbsorbPointer(
+              absorbing: (state is PhoneLoading) ? true : false,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OTPText(widget: widget),
+                  const SizedBox(height: 20),
+                  OTPTextTimer(counterTime: counterTime),
+                  const SizedBox(height: 20),
+                  OTPPinCodeTextField(otpController: otpController),
+                  const SizedBox(height: 20),
+                  OTPElevatedButton(
+                    otpController: otpController,
+                    isLoading: (state is PhoneLoading) ? true : false,
+                  ),
+                ],
+              ),
             );
           },
         ),

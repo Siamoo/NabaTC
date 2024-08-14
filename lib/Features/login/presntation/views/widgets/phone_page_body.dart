@@ -20,28 +20,39 @@ class PhonePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Phone Login'),
+      ),
       body: Form(
         key: formKey,
         child: BlocConsumer<PhoneCubit, PhoneState>(
           listener: (context, state) {
             if (state is PhoneCodeSent) {
               showSnackBarHelpers(context, 'code send');
-            }else if(state is PhoneVerified){
+            } else if (state is PhoneVerified) {
               showSnackBarHelpers(context, state.verifyMessage);
             }
           },
           builder: (context, state) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                PhoneLogo(screenWidth: screenWidth),
-                const SizedBox(
-                  height: 20,
-                ),
-                PhoneTextFormField(phonec: phonec),
-                const SizedBox(height: 10),
-                PhoneElevetedButton(formKey: formKey, phonec: phonec),
-              ],
+
+            return AbsorbPointer(
+              absorbing: (state is PhoneLoading) ? true : false,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  PhoneLogo(screenWidth: screenWidth),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  PhoneTextFormField(phonec: phonec),
+                  const SizedBox(height: 10),
+                  PhoneElevetedButton(
+                    formKey: formKey,
+                    phonec: phonec,
+                    isLoading: (state is PhoneLoading) ? true : false,
+                  ),
+                ],
+              ),
             );
           },
         ),

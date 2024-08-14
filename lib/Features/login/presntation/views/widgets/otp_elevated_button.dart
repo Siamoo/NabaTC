@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class OTPElevatedButton extends StatelessWidget {
   const OTPElevatedButton({
     super.key,
-    required this.otpController, required this.isLoading,
+    required this.otpController, required this.isLoading, 
   });
 
   final TextEditingController otpController;
@@ -15,6 +15,7 @@ class OTPElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Builder(
       builder: (context) {
         return ElevatedButton(
@@ -22,7 +23,18 @@ class OTPElevatedButton extends StatelessWidget {
             String otp = otpController.text;
             BlocProvider.of<PhoneCubit>(context).verifyOtp(otp);
           },
-          child: const Text(
+          child: isLoading
+                ? const Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 8),
+                  child:  SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(
+                        color: Colors.green,
+                      ),
+                    ),
+                )
+                :  const Text(
             'Verify',
             style: TextStyle(color: Colors.green),
           ),
