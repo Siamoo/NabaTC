@@ -29,7 +29,7 @@ final double screenWidth;
           buttonType: ButtonType.google,
         ),
         FlutterSocialButton(
-          onTap: () {},
+          onTap: () {Navigator.pushNamed(context, 'PhonePage');},
           mini: true,
           buttonType: ButtonType.phone,
         ),

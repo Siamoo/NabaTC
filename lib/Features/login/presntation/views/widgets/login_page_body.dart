@@ -4,6 +4,7 @@ import 'package:firebase1/Features/login/presntation/views/widgets/login_email_t
 import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_password_tff.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_social_icons.dart';
+import 'package:firebase1/Features/login/presntation/views/widgets/login_text_button.dart';
 import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -69,18 +70,7 @@ class LoginPageBody extends StatelessWidget {
                         text: 'Log in',
                         isLoading: (state is LoginLoading) ? true : false,
                       ),
-                      Center(
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                              foregroundColor: Colors.white),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'SignPage');
-                          },
-                          child: const Text(
-                            'Don’t have an account? Sign Up',
-                          ),
-                        ),
-                      ),
+                      const LoginTextButton(),
                       const SizedBox(height: 50),
                       LoginSocialIcons(
                         isLoading: (state is LoginLoading) ? true : false,

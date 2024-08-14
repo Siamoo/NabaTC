@@ -1,8 +1,8 @@
-import 'dart:developer';
 import 'package:firebase1/Features/Home/presntation/views/home_page.dart';
 import 'package:firebase1/Features/login/presntation/manger/login_cubit/login_cubit.dart';
 import 'package:firebase1/Features/login/presntation/manger/signin_cubit/signin_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/login_page.dart';
+import 'package:firebase1/Features/login/presntation/views/phone_page.dart';
 import 'package:firebase1/Features/login/presntation/views/sign_page.dart';
 import 'package:firebase1/firebase_options.dart';
 import 'package:firebase1/simple_bloc_observer.dart';
@@ -20,25 +20,10 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        log('User is currently signed out!');
-      } else {
-        log('User is signed in!');
-      }
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +41,7 @@ class _MyAppState extends State<MyApp> {
           'LoginPage': (context) => const LoginPage(),
           'SignPage': (context) => const SignPage(),
           'HomePage': (context) => const HomePage(),
+          'PhonePage': (context) => const PhonePage(),
         },
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
