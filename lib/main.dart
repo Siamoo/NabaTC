@@ -1,3 +1,6 @@
+import 'package:firebase1/Features/Home/data/models/model.dart';
+import 'package:firebase1/Features/Home/presntation/manger/add_note_cubit/add_note_cubit.dart';
+import 'package:firebase1/Features/Home/presntation/manger/notes_cubit/notes_cubit.dart';
 import 'package:firebase1/Features/Home/presntation/views/home_page.dart';
 import 'package:firebase1/Features/login/presntation/manger/login%20cubit/login_cubit.dart';
 import 'package:firebase1/Features/login/presntation/manger/phone%20cubit/phone_cubit.dart';
@@ -5,14 +8,19 @@ import 'package:firebase1/Features/login/presntation/manger/signin%20cubit/signi
 import 'package:firebase1/Features/login/presntation/views/login_page.dart';
 import 'package:firebase1/Features/login/presntation/views/phone_page.dart';
 import 'package:firebase1/Features/login/presntation/views/sign_page.dart';
+import 'package:firebase1/constant.dart';
 import 'package:firebase1/firebase_options.dart';
 import 'package:firebase1/simple_bloc_observer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
+    await Hive.initFlutter(); 
+  Hive.registerAdapter(ModelAdapter()); 
+  await Hive.openBox<Model>(kModelBox);
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -39,6 +47,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PhoneCubit(),
         ),
+        BlocProvider(
+          create: (context) => AddNoteCubit(),
+        ),
+        BlocProvider(create: (context) => NotesCubit()..fetchAllNotes(),)
       ],
       child: MaterialApp(
         routes: {
