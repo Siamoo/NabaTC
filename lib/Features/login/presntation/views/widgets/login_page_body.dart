@@ -47,8 +47,9 @@ class LoginPageBody extends StatelessWidget {
                     children: [
                       LoginLogo(
                         screenWidth: screenWidth,
-                        logPath: 'asset/images/login.jpg',
+                        logPath: 'asset/images/LoginPage.png',
                       ),
+                      const SizedBox(height: 16),
                       const Text(
                         'Email',
                         style: TextStyle(fontSize: 16),

@@ -1,6 +1,7 @@
 
 import 'package:firebase1/Features/Home/data/models/model.dart';
 import 'package:firebase1/Features/Home/presntation/manger/notes_cubit/notes_cubit.dart';
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,7 +23,7 @@ class HomeNoteTitleAndIcon extends StatelessWidget {
           style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color:Colors.orangeAccent),
+              color: kOrangeColor),
         ),
         IconButton(onPressed: (){
           note.delete();

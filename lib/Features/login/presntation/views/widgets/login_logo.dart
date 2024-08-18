@@ -23,13 +23,8 @@ class LoginLogo extends StatelessWidget {
             image: AssetImage(logPath),
             fit: BoxFit.fill,
           ),
-          border: Border.all(
-            color: const Color.fromARGB(
-                255, 250, 250, 250), // Border color
-            width: 8, // Border width
-          ),
           borderRadius: BorderRadius.circular(
-              40), // Optional: adds rounded corners
+              40), 
         ),
       ),
     );

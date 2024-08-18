@@ -1,4 +1,5 @@
 
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 
 class HomeTextLogo extends StatelessWidget {
@@ -16,7 +17,7 @@ class HomeTextLogo extends StatelessWidget {
           style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w800,
-              color: Colors.orangeAccent),
+              color: kOrangeColor),
         ),
       ],
     );

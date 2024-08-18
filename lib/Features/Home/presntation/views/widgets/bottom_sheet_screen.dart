@@ -63,7 +63,7 @@ class BottomSheetScreen extends StatelessWidget {
                     onSaved: (newValue) {
                 titel = newValue;
               },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Titel',
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: kBottomSheetColor),
@@ -84,7 +84,7 @@ class BottomSheetScreen extends StatelessWidget {
                     onSaved: (newValue) {
                 fristAdvice = newValue;
               },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'First advice',
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: kBottomSheetColor),
@@ -105,7 +105,7 @@ class BottomSheetScreen extends StatelessWidget {
                     onSaved: (newValue) {
                 secondAdvice = newValue;
               },
-                    decoration: InputDecoration(
+                    decoration:const InputDecoration(
                       hintText: 'Second advice',
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: kBottomSheetColor),
