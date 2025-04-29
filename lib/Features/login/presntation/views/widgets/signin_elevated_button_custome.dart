@@ -1,4 +1,5 @@
 import 'package:firebase1/Features/login/presntation/manger/signin%20cubit/signin_cubit.dart';
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,14 +26,13 @@ class SigninElevatedButtonCustom extends StatelessWidget {
         builder: (context, state) {
           return ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff00dfc0),
-                foregroundColor: Colors.black),
+                backgroundColor:kWhiteColor,
+            foregroundColor: kPrimaryColor),
             onPressed: () async {
               if (Form.of(context).validate()) {
                 BlocProvider.of<SigninCubit>(context).signin(
                     email: emailController.text,
                     password: passwordController.text);
-                    
               }
             },
             child: isLoading
@@ -43,7 +43,8 @@ class SigninElevatedButtonCustom extends StatelessWidget {
                       color: Colors.black,
                     ),
                   )
-                : Text(text),
+                : Text(text,
+                style:const TextStyle(fontWeight: FontWeight.w700),),
           );
         },
       ),

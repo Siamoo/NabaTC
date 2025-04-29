@@ -2,6 +2,7 @@ import 'package:firebase1/Features/login/presntation/manger/phone%20cubit/phone_
 import 'package:firebase1/Features/login/presntation/views/widgets/phone_eleveted_button.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/phone_logo.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/phone_text_form_field.dart';
+import 'package:firebase1/constant.dart';
 import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,7 @@ class PhonePageBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Phone Login'),
+        backgroundColor: kPrimaryColor,
       ),
       body: Form(
         key: formKey,

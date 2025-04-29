@@ -53,6 +53,7 @@ class OtpPageState extends State<OtpPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Enter OTP'),
+        backgroundColor: const Color(0xff0f393b),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

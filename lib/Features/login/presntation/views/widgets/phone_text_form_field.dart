@@ -1,4 +1,5 @@
 
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,7 +19,7 @@ class PhoneTextFormField extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: kWhiteColor,
                   borderRadius: BorderRadius.circular(10)),
               child: const Padding(
                 padding:
@@ -26,7 +27,7 @@ class PhoneTextFormField extends StatelessWidget {
                 child: Text(
                   '+20',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: kPrimaryColor,
                       fontWeight: FontWeight.w900,
                       fontSize: 17),
                 ),
@@ -39,10 +40,10 @@ class PhoneTextFormField extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: '1066036288',
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green),
+                    borderSide: BorderSide(color: kWhiteColor),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green),
+                    borderSide: BorderSide(color: kWhiteColor),
                   ),
                 ),
                 keyboardType: TextInputType.phone,

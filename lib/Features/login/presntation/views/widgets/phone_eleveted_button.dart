@@ -1,5 +1,6 @@
 import 'package:firebase1/Features/login/presntation/manger/phone%20cubit/phone_cubit.dart';
 import 'package:firebase1/Features/login/presntation/views/otp_page.dart';
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,7 +21,7 @@ class PhoneElevetedButton extends StatelessWidget {
     return BlocBuilder<PhoneCubit, PhoneState>(
       builder: (context, state) {
         return ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+          style: ElevatedButton.styleFrom(backgroundColor:kWhiteColor),
           onPressed: () {
             if (formKey.currentState?.validate() ?? false) {
               BlocProvider.of<PhoneCubit>(context)
@@ -39,7 +40,7 @@ class PhoneElevetedButton extends StatelessWidget {
                   )
                 : const Text(
             'OK',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.w800),
           ),
         );
       },

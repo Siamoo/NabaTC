@@ -5,6 +5,7 @@ import 'package:firebase1/Features/login/presntation/views/widgets/login_logo.da
 import 'package:firebase1/Features/login/presntation/views/widgets/login_password_tff.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_social_icons.dart';
 import 'package:firebase1/Features/login/presntation/views/widgets/login_text_button.dart';
+import 'package:firebase1/constant.dart';
 import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,7 @@ class LoginPageBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Log In'),
+        backgroundColor: kPrimaryColor,
       ),
       body: Padding(
         padding: EdgeInsets.all(screenWidth * .05),
@@ -52,7 +54,7 @@ class LoginPageBody extends StatelessWidget {
                       const SizedBox(height: 16),
                       const Text(
                         'Email',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 16,color: kWhiteColor),
                       ),
                       const SizedBox(height: 8),
                       LoginAndSigninEmailTFF(emailController: emailController),
