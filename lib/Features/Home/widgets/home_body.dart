@@ -22,6 +22,7 @@ class HomeBody extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width * .5;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "plants",
           style: GoogleFonts.bangers(

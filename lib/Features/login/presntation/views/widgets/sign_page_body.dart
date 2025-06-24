@@ -46,7 +46,7 @@ class SignPageBody extends StatelessWidget {
                     children: [
                       LoginLogo(
                         screenWidth: screenWidth,
-                        logPath: 'asset/images/signin.jpg',
+                        logPath: 'asset/images/signin.png',
                       ),
                       const Text(
                         'Email',

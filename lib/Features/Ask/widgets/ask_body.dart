@@ -1,6 +1,7 @@
 import 'package:firebase1/Features/Ask/widgets/coustom_ask_text_field.dart';
 import 'package:firebase1/Features/Ask/widgets/custom_ask_image.dart';
 import 'package:firebase1/constant.dart';
+import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,6 +37,9 @@ class AskBody extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
+                    const SizedBox(
+                      height: 30,
+                    ),
                     CustomAskImage(screenWidth: screenWidth),
                     const SizedBox(
                       height: 60,
@@ -51,7 +55,10 @@ class AskBody extends StatelessWidget {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showSnackBarHelpers(context, 'You\'r ask uploded');
+                        Navigator.pop(context);
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: kWhiteColor),
                       child: const Text(
@@ -67,6 +74,7 @@ class AskBody extends StatelessWidget {
               ),
             ],
           ),
-        ));
+        )
+        );
   }
 }

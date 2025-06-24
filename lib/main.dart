@@ -7,6 +7,7 @@ import 'package:firebase1/Features/Note/presntation/manger/add_note_cubit/add_no
 import 'package:firebase1/Features/Note/presntation/manger/notes_cubit/notes_cubit.dart';
 import 'package:firebase1/Features/Note/presntation/views/note_page.dart';
 import 'package:firebase1/Features/OnBoarding/on_boarding_view.dart';
+import 'package:firebase1/Features/Profile/presntation/views/profile_page.dart';
 import 'package:firebase1/Features/info/info_page.dart';
 import 'package:firebase1/Features/login/presntation/manger/login%20cubit/login_cubit.dart';
 import 'package:firebase1/Features/login/presntation/manger/phone%20cubit/phone_cubit.dart';
@@ -23,6 +24,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 
 void main() async {
@@ -75,13 +77,15 @@ class MyApp extends StatelessWidget {
           'InfoPage': (context) => const InfoPage(),
           'AiPage': (context) => const AiPage(),
           'AskPage': (context) => const AskPage(),
+          'ProfilePage': (context) => const ProfilePage(),
+
         },
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
         textTheme: GoogleFonts.dosisTextTheme(ThemeData.dark().textTheme),
           scaffoldBackgroundColor: kPrimaryColor,
         ),
-        home: const MangeUser(),
+        home: const MainPage(),
       ),
     );
   }
@@ -93,13 +97,76 @@ class MangeUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (FirebaseAuth.instance.currentUser?.emailVerified ?? false)
-        ? const HomePage()
+        ?  const MainPage()
         : const OnBoardingView();
   }
-
-
-
 
 }
 
 
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
+
+  final List<GlobalKey<NavigatorState>> _navigatorKeys = [
+    GlobalKey<NavigatorState>(),
+    GlobalKey<NavigatorState>(),
+  ];
+
+  void _onTap(int index) {
+    if (_currentIndex == index) {
+      // If tapped again, pop to first route in stack
+      _navigatorKeys[index].currentState?.popUntil((route) => route.isFirst);
+    } else {
+      setState(() {
+        _currentIndex = index;
+      });
+    }
+  }
+
+  Widget _buildOffstageNavigator(int index, Widget child) {
+    return Offstage(
+      offstage: _currentIndex != index,
+      child: Navigator(
+        key: _navigatorKeys[index],
+        onGenerateRoute: (_) => MaterialPageRoute(
+          builder: (_) => child,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          _buildOffstageNavigator(0, const HomePage()),
+          _buildOffstageNavigator(1, const ProfilePage()),
+        ],
+      ),
+      bottomNavigationBar: SalomonBottomBar(
+        currentIndex: _currentIndex,
+        onTap: _onTap,
+        items: [
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.home),
+            title: const Text("Home"),
+            selectedColor: kOrangeColor,
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.person),
+            title: const Text("Profile"),
+            selectedColor: kOrangeColor,
+          ),
+        ],
+      ),
+    );
+  }
+}
