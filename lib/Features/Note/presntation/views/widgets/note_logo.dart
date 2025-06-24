@@ -1,5 +1,6 @@
-
+import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NoteLogo extends StatelessWidget {
   const NoteLogo({
@@ -11,26 +12,31 @@ class NoteLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: screenWidth * .15, vertical: screenWidth * .05),
-      child: Container(
-        width: screenWidth * .6,
-        height: screenWidth * .5,
-        decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage('asset/images/home.jpg'),
-            fit: BoxFit.fill,
-          ),
-          border: Border.all(
-            color: const Color.fromARGB(
-                255, 250, 250, 250), // Border color
-            width: 8, // Border width
-          ),
-          borderRadius: BorderRadius.circular(
-              40), // Optional: adds rounded corners
+    return Column(
+      children: [
+        Text(
+          "Add any note",
+          style: GoogleFonts.bangers(
+              textStyle: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w500,
+                  color: kWhiteColor)),
         ),
-      ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * .15, vertical: screenWidth * .05),
+          child: Container(
+            width: screenWidth * .6,
+            height: screenWidth * .5,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('asset/images/Addnotes.png'),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
