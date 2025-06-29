@@ -2,9 +2,14 @@
 <resources>
 
     <string name="app_name">firebase1</string>
+    
+    <!-- Facebook App ID -->
     <string name="facebook_app_id">835372735237366</string>
-    <string name="fb_login_protocol_scheme">fb087b91712283ab9708c307075f844046</string>
-    <!-- <string name="facebook_client_token">687bc51f591e290bdfcf08f4850eb9e1</string> -->
+    
+    <!-- Must be "fb" + your App ID -->
+    <string name="fb_login_protocol_scheme">fb835372735237366</string>
 
+    <!-- Optional -->
+    <string name="facebook_client_token">687bc51f591e290bdfcf08f4850eb9e1</string>
 
 </resources>

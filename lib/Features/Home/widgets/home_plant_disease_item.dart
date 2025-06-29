@@ -49,7 +49,7 @@ class HomePlantDiseaseItem extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: screenWidth*.5 ,
+                          width: screenWidth * .9 ,
                           child: Text(
                             name,
                             style: const TextStyle(

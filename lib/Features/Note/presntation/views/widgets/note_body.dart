@@ -4,7 +4,6 @@ import 'package:firebase1/Features/Note/presntation/views/widgets/add_note_fab.d
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_list_view.dart';
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_logo.dart';
 import 'package:firebase1/constant.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';

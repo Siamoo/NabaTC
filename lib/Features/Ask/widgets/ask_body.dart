@@ -56,7 +56,6 @@ class AskBody extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        showSnackBarHelpers(context, 'You\'r ask uploded');
                         Navigator.pop(context);
                       },
                       style: ElevatedButton.styleFrom(

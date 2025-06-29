@@ -1,13 +1,13 @@
-import 'package:firebase1/Features/Ai/presntation/views/ai_page.dart';
+import 'package:firebase1/Features/Ai/presentation/views/ai_page.dart';
 import 'package:firebase1/Features/Ask/ask_page.dart';
 import 'package:firebase1/Features/Home/widgets/custom_home_icons_item.dart';
 import 'package:firebase1/Features/Home/widgets/home_plant_disease_listview.dart';
 import 'package:firebase1/Features/Note/presntation/views/note_page.dart';
 import 'package:firebase1/Features/info/info_page.dart';
 import 'package:firebase1/constant.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -21,30 +21,6 @@ class HomeBody extends StatelessWidget {
     // IconData iconData = Icons.abc;
     double screenWidth = MediaQuery.of(context).size.width * .5;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          "plants",
-          style: GoogleFonts.bangers(
-              textStyle: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w500,
-                  color: kOrangeColor)),
-        ),
-        backgroundColor: kPrimaryColor,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => const NotePage(),
-                  ),
-                );
-              },
-              icon: const Icon(Icons.settings, color: kOrangeColor))
-        ],
-      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * .055),
@@ -57,18 +33,35 @@ class HomeBody extends StatelessWidget {
                     height: 10,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search...',
-                        prefixIcon: const Icon(Icons.search),
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        contentPadding:
-                            const EdgeInsets.symmetric(vertical: 12.0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                          borderSide: BorderSide.none,
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('SearchPage');
+                      },
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Icon(Icons.search, color: Colors.black54),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              'search . . .',
+                              style: TextStyle(
+                                color: Colors.black26,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ),
