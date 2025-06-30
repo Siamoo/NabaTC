@@ -1,6 +1,7 @@
 
 
 
+import 'package:firebase1/Features/API/presentation/views/change_api_link_page.dart';
 import 'package:firebase1/Features/CallUs/presentation/views/call_us_page.dart';
 import 'package:firebase1/Features/Home/home_page.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
@@ -29,7 +30,7 @@ class _ZoomDrawerpagesState extends State<ZoomDrawerpages> {
     const CallUsPage(),
     const RategAppPage(),
     const LogoutPage(),
-    // const TreatmentPage(),
+    const ChangeApiLinkPage()
   ];
 
   @override

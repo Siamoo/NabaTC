@@ -21,7 +21,7 @@ class _SearchDiseaseBodyState extends State<SearchDiseaseBody> {
     'powdery mildew',
     'Septoria leaf spot',
     'Tomato mosaic virus',
-    'Tomato Yellow Leaf Curl Virus',    
+    'Tomato Yellow Leaf Curl Virus',
     'Spider mites Two spotted spider mite',
   ];
 
@@ -65,9 +65,24 @@ class _SearchDiseaseBodyState extends State<SearchDiseaseBody> {
             TextField(
               controller: _controller,
               onChanged: _updateSuggestions,
-              decoration: const InputDecoration(
-                hintText: 'Enter disease name . . .',
-                border: OutlineInputBorder(),
+              style: const TextStyle(color: Colors.white, fontSize: 16),
+              cursorColor: kOrangeColor,
+              decoration: InputDecoration(
+                hintText: 'Search for a disease...',
+                hintStyle: TextStyle(color: Colors.white70),
+                prefixIcon: Icon(Icons.search, color: kOrangeColor),
+                filled: true,
+                fillColor: kPrimaryColor.withAlpha((0.8 * 255).toInt()),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 16.0, horizontal: 20.0),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: BorderSide(color: kOrangeColor),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: BorderSide(color: kOrangeColor, width: 2),
+                ),
               ),
             ),
             const SizedBox(height: 10),
