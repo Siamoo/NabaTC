@@ -9,7 +9,7 @@ import 'package:firebase1/Features/Note/presntation/views/note_page.dart';
 import 'package:firebase1/Features/OnBoarding/on_boarding_view.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
 import 'package:firebase1/Features/Search/presentation/views/Search_page.dart';
-import 'package:firebase1/Features/Treatment/presntation/manager/TreatmentCubit/treatment_cubit.dart';
+import 'package:firebase1/Features/Treatment/presntation/manager/Cubit/treatment_cubit.dart';
 import 'package:firebase1/Features/Treatment/presntation/views/treatment_page.dart';
 import 'package:firebase1/Features/info/info_page.dart';
 import 'package:firebase1/Features/login/presentation/manger/login%20cubit/login_cubit.dart';
@@ -69,7 +69,6 @@ class MyApp extends StatelessWidget {
           'AskPage': (context) => const AskPage(),
           'ProfilePage': (context) => const ProfilePage(),
           'ZoomDrawerpages': (context) => const ZoomDrawerpages(),
-          'TreatmentPage': (context) => const TreatmentPage(diseaseName: 'Tomato_Yellow_Leaf_Curl_Virus'),
           'SearchPage': (context) => const SearchPage(),
         },
         debugShowCheckedModeBanner: false,
@@ -104,9 +103,9 @@ class ManageUser extends StatelessWidget {
 
         if (user != null) {
           // Optional: Check for email verification if needed
-          if (user.email != null && !user.emailVerified) {
-            return const LoginPage(); // or ask to verify email
-          }
+          // if (user.email != null && !user.emailVerified) {
+          //   return const LoginPage(); // or ask to verify email
+          // }
           return const ZoomDrawerpages();
         } else {
           return const OnBoardingView();

@@ -9,18 +9,18 @@ class LogoutBody extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
             IconButton(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
-                  Navigator.pushReplacementNamed(context, 'OnBoardingView');
+                  Navigator.pushReplacementNamed(context, 'LoginPage');
                 },
                 icon: Icon(Icons.logout))
-                    ],
-                  ),
-          )),
+          ],
+        ),
+      )),
     );
   }
 }

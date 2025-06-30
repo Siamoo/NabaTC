@@ -18,8 +18,8 @@ class AiBody extends StatefulWidget {
 }
 
 class _AiBodyState extends State<AiBody> {
-  File? _image;
-  String url = 'https://c80d-156-207-169-184.ngrok-free.app/api/predict';
+  File? image;
+  String url = 'https://5961-156-207-169-184.ngrok-free.app/api/predict';
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +50,8 @@ class _AiBodyState extends State<AiBody> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (_image != null)
-                  CustomSelectedImage(image: _image)
+                if (image != null)
+                  CustomSelectedImage(image: image)
                 else
                   const CustomAiImage(),
 
@@ -132,9 +132,7 @@ class _AiBodyState extends State<AiBody> {
                                 MaterialPageRoute(
                                   builder: (_) => TreatmentPage(
                                     diseaseName: formatDiseaseName(state.message),
-                                  ),
-                                  settings: RouteSettings(
-                                    arguments: formatDiseaseName(state.message),
+                                    image: image,
                                   ),
                                 ),
                               );
@@ -183,10 +181,10 @@ class _AiBodyState extends State<AiBody> {
                     ), // Upload button
                     ElevatedButton(
                       onPressed: () {
-                        if (_image != null) {
+                        if (image != null) {
                           String userId = "1234"; // Your userId
                           context.read<UploadCubit>().uploadImage(userId, url,
-                              _image!); // Trigger the upload with selected image
+                              image!); // Trigger the upload with selected image
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -260,7 +258,7 @@ class _AiBodyState extends State<AiBody> {
 
     if (pickedFile != null) {
       setState(() {
-        _image = File(pickedFile.path); // Update image state
+        image = File(pickedFile.path); // Update image state
       });
     }
   }

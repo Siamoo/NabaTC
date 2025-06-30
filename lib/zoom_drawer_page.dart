@@ -1,11 +1,11 @@
 
 
 
-import 'package:firebase1/Features/Ask/ask_page.dart';
+import 'package:firebase1/Features/CallUs/presentation/views/call_us_page.dart';
 import 'package:firebase1/Features/Home/home_page.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
-import 'package:firebase1/Features/Treatment/presntation/views/treatment_page.dart';
 import 'package:firebase1/Features/LogOut/presentation/views/logout_page.dart';
+import 'package:firebase1/Features/RateApp/presentation/view/rate_app_page.dart';
 import 'package:firebase1/constant.dart';
 import 'package:firebase1/drawer_page.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +26,8 @@ class _ZoomDrawerpagesState extends State<ZoomDrawerpages> {
   final List<Widget> screens = [
     const HomePage(),
     const ProfilePage(),
+    const CallUsPage(),
+    const RategAppPage(),
     const LogoutPage(),
     // const TreatmentPage(),
   ];

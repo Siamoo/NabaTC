@@ -11,7 +11,7 @@ class TreatmentCubit extends Cubit<TreatmentState> {
     emit(TreatmentLoading());
     try {
       final response = await Dio().get(
-        'https://c80d-156-207-169-184.ngrok-free.app/api/disease/$diseaseName',
+        'https://5961-156-207-169-184.ngrok-free.app/api/disease/$diseaseName',
       );
       if (response.data['success'] == true && response.data['disease'] != null) {
         final treatment = TreatmentModel.fromJson(response.data['disease']);

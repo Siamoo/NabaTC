@@ -29,7 +29,11 @@ class Drawerpage extends StatelessWidget {
               const SizedBox(height: 20),
               drawerItem("Home", 0, 'asset/icons/home.svg'),
               drawerItem("Profile", 1, 'asset/icons/profile.svg'),
-              drawerItem("Logout", 2, 'asset/icons/logout.svg'),
+              drawerItem("Call Us", 2, 'asset/icons/contact.svg'),
+              drawerItem("Rate App", 3, 'asset/icons/rate.svg'),
+              drawerItem("Log out", 4, 'asset/icons/logout.svg'),
+              
+
               // drawerItem("Treatment", 3),
             ],
           ),

@@ -16,7 +16,7 @@ class _ProfileBodyState extends State<ProfileBody> {
   final ImagePicker _picker = ImagePicker();
   User? user = FirebaseAuth.instance.currentUser;
 
-  String phoneNumber = '';
+  String phoneNumber = '+20 1066036288';
   File? _localImageFile;
 
   @override

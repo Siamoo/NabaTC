@@ -13,7 +13,19 @@
             <data android:mimeType="text/plain" />
         </intent>
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+        <package android:name="com.whatsapp" />
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+        <!-- ✅ Add this for WhatsApp link detection -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" android:host="wa.me" />
+        </intent>
     </queries>
+
+
 
     <application
         android:name="${applicationName}"
