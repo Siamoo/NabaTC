@@ -10,7 +10,6 @@ import 'package:firebase1/Features/OnBoarding/on_boarding_view.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
 import 'package:firebase1/Features/Search/presentation/views/Search_page.dart';
 import 'package:firebase1/Features/Treatment/presntation/manager/Cubit/treatment_cubit.dart';
-import 'package:firebase1/Features/Treatment/presntation/views/treatment_page.dart';
 import 'package:firebase1/Features/info/info_page.dart';
 import 'package:firebase1/Features/login/presentation/manger/login%20cubit/login_cubit.dart';
 import 'package:firebase1/Features/login/presentation/manger/phone%20cubit/phone_cubit.dart';

@@ -3,20 +3,23 @@
 import 'package:firebase1/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class CustomHomeIconsItem extends StatelessWidget {
   const CustomHomeIconsItem({
     super.key,
     required this.pageName,
-    required this.iconName,
-    required this.iconText, 
+    required this.iconText,
     required this.iconSize,
+    this.iconName,
+    this.isGif = false,
+    this.gifPath,
   });
 
   final Widget pageName;
-  final IconData iconName;
   final String iconText;
   final double iconSize;
+  final IconData? iconName;
+  final bool isGif;
+  final String? gifPath;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,6 @@ class CustomHomeIconsItem extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            // Navigator.pushReplacementNamed(context, pageName);
             Navigator.push(
               context,
               CupertinoPageRoute(
@@ -33,20 +35,22 @@ class CustomHomeIconsItem extends StatelessWidget {
             );
           },
           style: ElevatedButton.styleFrom(
-            padding:  EdgeInsets.symmetric(
-              vertical: (34-(iconSize/1.85)),
+            padding: EdgeInsets.symmetric(
+              vertical: (30 - (35 / 1.85)),
             ),
-            backgroundColor: kHomeIconsBakColor,
+            backgroundColor: kWhiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          child:  Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(iconName, size: iconSize, color: kHomeIconsColor),
-            ],
-          ),
+          child: isGif
+              ? Image.asset(
+                  gifPath!,
+                  width: iconSize + 10,
+                  height: iconSize + 10,
+                  fit: BoxFit.cover,
+                )
+              : Icon(iconName, size: iconSize, color: kHomeIconsColor),
         ),
         const SizedBox(height: 2),
         Text(iconText,

@@ -76,11 +76,11 @@ class _SearchDiseaseBodyState extends State<SearchDiseaseBody> {
                 contentPadding: const EdgeInsets.symmetric(
                     vertical: 16.0, horizontal: 20.0),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(20.0),
                   borderSide: BorderSide(color: kOrangeColor),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(20.0),
                   borderSide: BorderSide(color: kOrangeColor, width: 2),
                 ),
               ),

@@ -28,7 +28,7 @@ class _AiBodyState extends State<AiBody> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-              "Ai Chick",
+              "Ai Scan",
               style: GoogleFonts.bangers(
                 textStyle: const TextStyle(
                   fontSize: 28,

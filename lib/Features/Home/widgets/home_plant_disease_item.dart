@@ -1,6 +1,7 @@
 import 'package:firebase1/Features/Home/widgets/custom_plant_image.dart';
 import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePlantDiseaseItem extends StatelessWidget {
   const HomePlantDiseaseItem({
@@ -34,28 +35,30 @@ class HomePlantDiseaseItem extends StatelessWidget {
                 width: 20,
               ),
               SizedBox(
-                width: screenWidth * 1.3,
+                width: screenWidth * 1.18,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        const Text(
-                          'Name: ',
-                          style: TextStyle(
-                            color: kHomeIconsBakColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
+                        // const Text(
+                        //   'Name: ',
+                        //   style: TextStyle(
+                        //     color: kHomeIconsBakColor,
+                        //     fontWeight: FontWeight.bold,
+                        //     fontSize: 18,
+                        //   ),
+                        // ),
                         SizedBox(
-                          width: screenWidth * .9 ,
+                          width: screenWidth *1.1,
                           child: Text(
                             name,
-                            style: const TextStyle(
-                              color: kWhiteBlackColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                            style: GoogleFonts.bangers(
+                              textStyle: const TextStyle(
+                                color: Color.fromARGB(255, 229, 157, 121),
+                                fontWeight: FontWeight.w100,
+                                fontSize: 18,
+                              ),
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -68,7 +71,8 @@ class HomePlantDiseaseItem extends StatelessWidget {
                     ),
                     Text(
                       description,
-                      style: const TextStyle(fontSize: 17, color: Colors.white70),
+                      style:
+                          const TextStyle(fontSize: 17, color: Colors.white70),
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
                     ),

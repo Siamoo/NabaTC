@@ -75,7 +75,7 @@ class HomeBody extends StatelessWidget {
                         textStyle: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
-                            color: kWhiteBlackColor)),
+                            color: kOrangeColor)),
                   ),
                   const SizedBox(
                     height: 6,
@@ -84,25 +84,29 @@ class HomeBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       CustomHomeIconsItem(
-                        iconName: Icons.psychology_sharp,
-                        iconText: 'Ai',
+                        isGif: true,
+                        gifPath: 'asset/icons/ai.gif',
+                        iconText: 'Scan',
                         pageName: AiPage(),
-                        iconSize: 40,
+                        iconSize: 35,
                       ),
                       CustomHomeIconsItem(
-                        iconName: Icons.group,
+                        isGif: true,
+                        gifPath: 'asset/icons/ask.gif',
                         iconText: 'Ask',
                         pageName: AskPage(),
                         iconSize: 35,
                       ),
                       CustomHomeIconsItem(
-                        iconName: Icons.edit,
+                        isGif: true,
+                        gifPath: 'asset/icons/notes.gif',
                         iconText: 'Note',
                         pageName: NotePage(),
                         iconSize: 35,
                       ),
                       CustomHomeIconsItem(
-                        iconName: Icons.priority_high_rounded,
+                        isGif: true,
+                        gifPath: 'asset/icons/info.gif',
                         iconText: 'Info',
                         pageName: InfoPage(),
                         iconSize: 35,
@@ -115,10 +119,11 @@ class HomeBody extends StatelessWidget {
                   Text(
                     " Famous tomato diseases",
                     style: GoogleFonts.bangers(
-                        textStyle: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                            color: kWhiteBlackColor)),
+                      textStyle: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: kOrangeColor),
+                    ),
                   ),
                   const SizedBox(
                     height: 6,
