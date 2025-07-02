@@ -36,7 +36,8 @@ class CustomHomeIconsItem extends StatelessWidget {
           },
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.symmetric(
-              vertical: (30 - (35 / 1.85)),
+              vertical: (30 - (iconSize / 1.85)),
+              // horizontal: (60 - (iconSize / 1.85))
             ),
             backgroundColor: kWhiteColor,
             shape: RoundedRectangleBorder(
@@ -52,10 +53,10 @@ class CustomHomeIconsItem extends StatelessWidget {
                 )
               : Icon(iconName, size: iconSize, color: kHomeIconsColor),
         ),
-        const SizedBox(height: 2),
+        // const SizedBox(height: 2),
         Text(iconText,
             style: const TextStyle(
-                fontWeight: FontWeight.w800, color: kWhiteColor, fontSize: 16)),
+                fontWeight: FontWeight.w800, color: kWhiteColor, fontSize: 19)),
       ],
     );
   }

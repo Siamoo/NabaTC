@@ -4,7 +4,7 @@ import 'package:firebase1/Features/login/presentation/views/widgets/otp_elevated
 import 'package:firebase1/Features/login/presentation/views/widgets/otp_pin_code_text_field.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/otp_text.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/otp_text_timer.dart';
-import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
+import 'package:firebase1/core/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -60,7 +60,7 @@ class OtpPageState extends State<OtpPage> {
         child: BlocConsumer<PhoneCubit, PhoneState>(
           listener: (context, state) {
             if (state is PhoneSuccess) {
-              Navigator.pushReplacementNamed(context, 'ZoomDrawerpages');
+              Navigator.pushReplacementNamed(context, 'ZoomDrawerPages');
             } else if (state is PhoneFailure) {
               showSnackBarHelpers(context, state.errMessage);
             }

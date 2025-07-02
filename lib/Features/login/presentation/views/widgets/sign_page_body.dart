@@ -5,7 +5,7 @@ import 'package:firebase1/Features/login/presentation/views/widgets/login_logo.d
 import 'package:firebase1/Features/login/presentation/views/widgets/sign_confirm_password_tff.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/sign_password_tff.dart';
 import 'package:firebase1/constant.dart';
-import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
+import 'package:firebase1/core/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

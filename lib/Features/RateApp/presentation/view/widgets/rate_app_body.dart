@@ -1,4 +1,4 @@
-
+import 'package:firebase1/Features/Home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -24,14 +24,17 @@ class _RateAppBodyState extends State<RateAppBody> {
             'You rated us $_rating stars\nYour feedback: ${feedback.isNotEmpty ? feedback : "No feedback"}'),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, 'ZoomDrawerPages');
+            },
             child: const Text('Close'),
           )
         ],
       ),
     );
 
-    // You could send feedback and rating to Firebase or your server here
+    // send feedback and rating to Firebase or your server here
   }
 
   @override

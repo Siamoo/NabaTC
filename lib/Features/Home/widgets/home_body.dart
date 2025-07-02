@@ -1,13 +1,9 @@
-import 'package:firebase1/Features/Ai/presentation/views/ai_page.dart';
-import 'package:firebase1/Features/Ask/ask_page.dart';
-import 'package:firebase1/Features/Home/widgets/custom_home_icons_item.dart';
+import 'package:firebase1/Features/Home/widgets/home_main_icons_button.dart';
 import 'package:firebase1/Features/Home/widgets/home_plant_disease_listview.dart';
-import 'package:firebase1/Features/Note/presntation/views/note_page.dart';
-import 'package:firebase1/Features/info/info_page.dart';
+import 'package:firebase1/Features/Home/widgets/home_search_button.dart';
 import 'package:firebase1/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -16,9 +12,6 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // String iconName = '';
-    // Widget pageName = const LoginPage();
-    // IconData iconData = Icons.abc;
     double screenWidth = MediaQuery.of(context).size.width * .5;
     return Scaffold(
       body: SafeArea(
@@ -44,30 +37,12 @@ class HomeBody extends StatelessWidget {
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Icon(Icons.search, color: Colors.black54),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              'search . . .',
-                              style: TextStyle(
-                                color: Colors.black26,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 18,
-                              ),
-                            )
-                          ],
-                        ),
+                        child: HomeSearchButton(),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 25,
                   ),
                   Text(
                     "    let's fun . .",
@@ -80,39 +55,7 @@ class HomeBody extends StatelessWidget {
                   const SizedBox(
                     height: 6,
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CustomHomeIconsItem(
-                        isGif: true,
-                        gifPath: 'asset/icons/ai.gif',
-                        iconText: 'Scan',
-                        pageName: AiPage(),
-                        iconSize: 35,
-                      ),
-                      CustomHomeIconsItem(
-                        isGif: true,
-                        gifPath: 'asset/icons/ask.gif',
-                        iconText: 'Ask',
-                        pageName: AskPage(),
-                        iconSize: 35,
-                      ),
-                      CustomHomeIconsItem(
-                        isGif: true,
-                        gifPath: 'asset/icons/notes.gif',
-                        iconText: 'Note',
-                        pageName: NotePage(),
-                        iconSize: 35,
-                      ),
-                      CustomHomeIconsItem(
-                        isGif: true,
-                        gifPath: 'asset/icons/info.gif',
-                        iconText: 'Info',
-                        pageName: InfoPage(),
-                        iconSize: 35,
-                      ),
-                    ],
-                  ),
+                  HomeMainIconsButton(),
                   const SizedBox(
                     height: 25,
                   ),

@@ -50,12 +50,12 @@ class HomePlantDiseaseItem extends StatelessWidget {
                         //   ),
                         // ),
                         SizedBox(
-                          width: screenWidth *1.1,
+                          width: screenWidth * 1.1,
                           child: Text(
                             name,
                             style: GoogleFonts.bangers(
                               textStyle: const TextStyle(
-                                color: Color.fromARGB(255, 229, 157, 121),
+                                color: kOrangewhiteColor,
                                 fontWeight: FontWeight.w100,
                                 fontSize: 18,
                               ),
@@ -66,16 +66,19 @@ class HomePlantDiseaseItem extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
+                    // const SizedBox(
+                    //   height: 5,
+                    // ),
                     Text(
                       description,
                       style:
                           const TextStyle(fontSize: 17, color: Colors.white70),
-                      maxLines: 4,
+                      maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                     ),
+                    SizedBox(
+                      height: 5,
+                    )
                   ],
                 ),
               )

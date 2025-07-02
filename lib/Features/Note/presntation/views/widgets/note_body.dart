@@ -4,6 +4,7 @@ import 'package:firebase1/Features/Note/presntation/views/widgets/add_note_fab.d
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_list_view.dart';
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_logo.dart';
 import 'package:firebase1/constant.dart';
+import 'package:firebase1/custom_app_bar_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,20 +19,7 @@ class NoteBody extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              "Note",
-              style: GoogleFonts.bangers(
-                textStyle: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w500,
-                    color: kOrangeColor),
-              ),
-            ),
-          ],
-        ),
+        title: CustomAppBarTitle(pageTilte: 'Note'),
         iconTheme: const IconThemeData(color: kOrangeColor),
         centerTitle: true,
         backgroundColor: kPrimaryColor,

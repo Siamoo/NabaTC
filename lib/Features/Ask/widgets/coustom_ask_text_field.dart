@@ -5,18 +5,21 @@ class CustomAskTextField extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.controller,
   });
 
   final String title;
   final Icon icon;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: TextField(
+        controller: controller,
         minLines: 1,
-        maxLines: null,
+        maxLines: 6,
         decoration: InputDecoration(
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xff00dfc0)),

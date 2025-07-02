@@ -56,7 +56,7 @@ class CustomPlantImage extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 16,
+          height: 30,
         )
       ],
     );

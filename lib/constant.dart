@@ -14,6 +14,7 @@ const Color kWhiteBlackColor = Color(0xffe9e3d5);
 const Color kHomeIconsColor = Color(0xff0f494d);
 const Color kHomeIconsBakColor = Color(0xffe68757);
 const Color kHomeOtherPrimaryColor = Color(0xffcfcfcf);
+const Color kOrangewhiteColor = Color(0xffdbbaa9);
 
 
 

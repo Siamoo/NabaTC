@@ -16,7 +16,7 @@ class CustomTreatmentImage extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: (MediaQuery.of(context).size.width) * .73,
+          width: (MediaQuery.of(context).size.width) * .7,
           child: Center(
             child: Text(
               name,
@@ -34,12 +34,11 @@ class CustomTreatmentImage extends StatelessWidget {
         Container(
           width: screenWidth *1.5,
           height: screenWidth *1.5,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
+          decoration: BoxDecoration(
+            image: const DecorationImage(
               image: AssetImage('asset/images/treatment.png'),
               fit: BoxFit.fill,
             ),
-            // Optional: adds rounded corners
           ),
         ),
       ],

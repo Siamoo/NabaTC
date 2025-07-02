@@ -13,14 +13,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ZoomDrawerpages extends StatefulWidget {
-  const ZoomDrawerpages({super.key});
+class ZoomDrawerPages extends StatefulWidget {
+  const ZoomDrawerPages({super.key});
 
   @override
-  State<ZoomDrawerpages> createState() => _ZoomDrawerpagesState();
+  State<ZoomDrawerPages> createState() => _ZoomDrawerPagesState();
 }
 
-class _ZoomDrawerpagesState extends State<ZoomDrawerpages> {
+class _ZoomDrawerPagesState extends State<ZoomDrawerPages> {
   final ZoomDrawerController _controller = ZoomDrawerController();
   int selectedIndex = 0;
 

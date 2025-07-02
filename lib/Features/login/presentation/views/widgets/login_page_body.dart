@@ -8,7 +8,7 @@ import 'package:firebase1/Features/login/presentation/views/widgets/login_passwo
 import 'package:firebase1/Features/login/presentation/views/widgets/login_social_icons.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/login_text_button.dart';
 import 'package:firebase1/constant.dart';
-import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
+import 'package:firebase1/core/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,11 +32,11 @@ class LoginPageBody extends StatelessWidget {
             child: BlocConsumer<LoginCubit, LoginState>(
               listener: (context, state) {
                 if (state is LoginSuccess) {
-                  Navigator.pushReplacementNamed(context, 'ZoomDrawerpages');
+                  Navigator.pushReplacementNamed(context, 'ZoomDrawerPages');
                 } else if (state is LoginGoogleSuccess) {
-                  Navigator.pushReplacementNamed(context, 'ZoomDrawerpages');
+                  Navigator.pushReplacementNamed(context, 'ZoomDrawerPages');
                 } else if (state is LoginFaceBookleSuccess) {
-                  Navigator.pushReplacementNamed(context, 'ZoomDrawerpages');
+                  Navigator.pushReplacementNamed(context, 'ZoomDrawerPages');
                 }  else if (state is LoginFailure) {
                   log(state.errMessage);
                   showSnackBarHelpers(context, state.errMessage);

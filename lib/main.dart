@@ -1,12 +1,15 @@
 import 'package:firebase1/Features/Ai/presentation/manager/ai%20cubit/upload_cubit.dart';
 import 'package:firebase1/Features/Ai/presentation/views/ai_page.dart';
 import 'package:firebase1/Features/Ask/ask_page.dart';
+import 'package:firebase1/Features/History/data/models/historymodel.dart';
+import 'package:firebase1/Features/History/presentation/views/history_treatment_page.dart';
 import 'package:firebase1/Features/Home/home_page.dart';
 import 'package:firebase1/Features/Note/data/models/model.dart';
 import 'package:firebase1/Features/Note/presntation/manger/add_note_cubit/add_note_cubit.dart';
 import 'package:firebase1/Features/Note/presntation/manger/notes_cubit/notes_cubit.dart';
 import 'package:firebase1/Features/Note/presntation/views/note_page.dart';
 import 'package:firebase1/Features/OnBoarding/on_boarding_view.dart';
+import 'package:firebase1/Features/Profile/presentation/manager/cubit/profile_cubit.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
 import 'package:firebase1/Features/Search/presentation/views/Search_page.dart';
 import 'package:firebase1/Features/Treatment/presntation/manager/Cubit/treatment_cubit.dart';
@@ -31,6 +34,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+    Hive.registerAdapter(HistorymodelAdapter());
+  await Hive.openBox<Historymodel>('historyBox');
   Hive.registerAdapter(ModelAdapter());
   await Hive.openBox<Model>(kModelBox);
   await Firebase.initializeApp(
@@ -54,6 +59,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => NotesCubit()..fetchAllNotes()),
         BlocProvider(create: (context) => UploadCubit()),
         BlocProvider(create: (context) => TreatmentCubit()),
+        BlocProvider(create: (context) => ProfileCubit(),child: ProfilePage(),),
       ],
       child: MaterialApp(
         routes: {
@@ -67,8 +73,11 @@ class MyApp extends StatelessWidget {
           'AiPage': (context) => const AiPage(),
           'AskPage': (context) => const AskPage(),
           'ProfilePage': (context) => const ProfilePage(),
-          'ZoomDrawerpages': (context) => const ZoomDrawerpages(),
+          'ZoomDrawerPages': (context) => const ZoomDrawerPages(),
           'SearchPage': (context) => const SearchPage(),
+          'HistoryTreatmentPage': (context) => const HistoryTreatmentPage(),
+
+          
         },
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
@@ -105,7 +114,7 @@ class ManageUser extends StatelessWidget {
           // if (user.email != null && !user.emailVerified) {
           //   return const LoginPage(); // or ask to verify email
           // }
-          return const ZoomDrawerpages();
+          return const ZoomDrawerPages();
         } else {
           return const OnBoardingView();
         }

@@ -2,7 +2,7 @@
 import 'package:firebase1/Features/Note/presntation/manger/add_note_cubit/add_note_cubit.dart';
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_bottom_sheet_screen.dart';
 import 'package:firebase1/constant.dart';
-import 'package:firebase1/helpers/show_snacke_bar_helpers.dart';
+import 'package:firebase1/core/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
