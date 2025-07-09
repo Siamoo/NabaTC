@@ -1,4 +1,4 @@
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';

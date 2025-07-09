@@ -17,17 +17,16 @@ class InfoItemListview extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.zero,
-  itemCount: infoList.length,
-  itemBuilder: (context, index) {
-    final item = infoList[index];
-    return InfoItem(
-      infoImage: item.customInfoImage,
-      screenWidth: screenWidth,
-      infoName: item.name,
-      infoDescrip: item.description,
-    );
-  },
+      itemCount: infoList.length,
+      itemBuilder: (context, index) {
+        final item = infoList[index];
+        return InfoItem(
+          infoImage: item.customInfoImage,
+          screenWidth: screenWidth,
+          infoName: item.name,
+          infoDescrip: item.description,
+        );
+      },
     );
   }
 }
-

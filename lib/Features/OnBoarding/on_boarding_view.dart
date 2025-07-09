@@ -4,7 +4,7 @@ import 'package:firebase1/Features/OnBoarding/widgets/first_slider_page.dart';
 import 'package:firebase1/Features/OnBoarding/widgets/second_slider_page.dart';
 import 'package:firebase1/Features/OnBoarding/widgets/third_slider_page.dart';
 import 'package:firebase1/Features/login/presentation/views/login_page.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';

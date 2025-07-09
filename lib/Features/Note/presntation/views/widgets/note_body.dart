@@ -3,11 +3,10 @@ import 'package:firebase1/Features/Note/presntation/manger/notes_cubit/notes_cub
 import 'package:firebase1/Features/Note/presntation/views/widgets/add_note_fab.dart';
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_list_view.dart';
 import 'package:firebase1/Features/Note/presntation/views/widgets/note_logo.dart';
-import 'package:firebase1/constant.dart';
-import 'package:firebase1/custom_app_bar_title.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
+import 'package:firebase1/core/utils/custom_app_bar_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NoteBody extends StatelessWidget {
   const NoteBody({
@@ -26,20 +25,20 @@ class NoteBody extends StatelessWidget {
       ),
       floatingActionButton: AddNoteFAB(screenWidth: screenWidth),
       body: SafeArea(
-        child: CustomScrollView(slivers: [
-          SliverToBoxAdapter(
-            child: NoteLogo(screenWidth: screenWidth),
+        child: SingleChildScrollView(
+          child: BlocBuilder<NotesCubit, NotesState>(
+            builder: (context, state) {
+              List<Model> notes =
+                  BlocProvider.of<NotesCubit>(context).notes ?? [];
+              return Column(
+                children: [
+                  if (notes.isEmpty) NoteLogo(),
+                  NoteListView(notes: notes, screenWidth: screenWidth),
+                ],
+              );
+            },
           ),
-          SliverToBoxAdapter(
-            child: BlocBuilder<NotesCubit, NotesState>(
-              builder: (context, state) {
-                List<Model> notes =
-                    BlocProvider.of<NotesCubit>(context).notes ?? [];
-                return NoteListView(notes: notes, screenWidth: screenWidth);
-              },
-            ),
-          )
-        ]),
+        ),
       ),
     );
   }

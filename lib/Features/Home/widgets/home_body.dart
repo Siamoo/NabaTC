@@ -1,7 +1,7 @@
 import 'package:firebase1/Features/Home/widgets/home_main_icons_button.dart';
 import 'package:firebase1/Features/Home/widgets/home_plant_disease_listview.dart';
 import 'package:firebase1/Features/Home/widgets/home_search_button.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,10 +47,12 @@ class HomeBody extends StatelessWidget {
                   Text(
                     "    let's fun . .",
                     style: GoogleFonts.bangers(
-                        textStyle: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: kOrangeColor)),
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: kHomeOrangewhiteColor,
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 6,
@@ -65,7 +67,7 @@ class HomeBody extends StatelessWidget {
                       textStyle: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
-                          color: kOrangeColor),
+                          color: kHomeOrangewhiteColor),
                     ),
                   ),
                   const SizedBox(

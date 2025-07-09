@@ -1,7 +1,7 @@
 import 'package:firebase1/Features/Profile/presentation/manager/cubit/profile_cubit.dart';
 import 'package:firebase1/Features/Profile/presentation/manager/cubit/profile_state.dart';
 import 'package:firebase1/Features/Profile/presentation/views/widgets/build_info_tile.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,8 +11,8 @@ class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
 
   void _showEditProfileDialog(BuildContext context, User user, String phone) {
-    final nameController = TextEditingController(text: user.displayName ?? "");
-    final phoneController = TextEditingController(text: phone);
+    final nameController = TextEditingController(text: user.displayName ?? "siam");
+    final phoneController = TextEditingController(text: phone ?? '01066036288');
 
     showDialog(
       context: context,

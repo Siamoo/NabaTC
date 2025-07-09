@@ -29,7 +29,7 @@
 
     <application
         android:name="${applicationName}"
-        android:label="firebase1"
+        android:label="NabaTC"
         android:icon="@mipmap/ic_launcher">
 
         <!-- Facebook SDK Config -->

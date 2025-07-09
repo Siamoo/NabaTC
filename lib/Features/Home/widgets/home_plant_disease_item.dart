@@ -1,5 +1,5 @@
 import 'package:firebase1/Features/Home/widgets/custom_plant_image.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,7 +1,7 @@
 import 'package:firebase1/Features/Search/presentation/views/widgets/history_button.dart';
 import 'package:firebase1/Features/Search/presentation/views/widgets/search_list_view_builder.dart';
-import 'package:firebase1/constant.dart';
-import 'package:firebase1/custom_app_bar_title.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
+import 'package:firebase1/core/utils/custom_app_bar_title.dart';
 import 'package:flutter/material.dart';
 
 

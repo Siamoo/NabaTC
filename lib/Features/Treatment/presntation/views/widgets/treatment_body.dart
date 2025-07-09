@@ -1,18 +1,18 @@
 import 'dart:io';
 import 'package:firebase1/Features/Treatment/presntation/views/widgets/case_one_list_view.dart';
 import 'package:firebase1/Features/Treatment/presntation/views/widgets/case_two_list_view.dart';
-import 'package:firebase1/custom_app_bar_title.dart';
+import 'package:firebase1/core/utils/custom_app_bar_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:firebase1/Features/History/data/models/historymodel.dart';
 import 'package:firebase1/Features/Treatment/presntation/manager/Cubit/treatment_cubit.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 
 class TreatmentBody extends StatefulWidget {
   final String diseaseName;
   final File? image;
-  final Historymodel? historyModel; // <-- NEW
+  final Historymodel? historyModel; 
 
   const TreatmentBody({
     super.key,
@@ -52,7 +52,7 @@ class _TreatmentBodyState extends State<TreatmentBody> {
       final model = widget.historyModel!;
       return Scaffold(
         appBar:AppBar(
-          title: CustomAppBarTitle(pageTilte: 'Disease Info'),
+          title: CustomAppBarTitle(pageTilte: 'History Info'),
           iconTheme: const IconThemeData(color: kOrangeColor),
           centerTitle: true,
           backgroundColor: kPrimaryColor,
@@ -64,7 +64,7 @@ class _TreatmentBodyState extends State<TreatmentBody> {
       );
     }
 
-    // Case 2: Fetch and display treatment from cubit
+    // Case 2: Fetch and display treatment from cubit (scan and search)
     return BlocProvider(
       create: (_) => TreatmentCubit()..fetchTreatment(widget.diseaseName),
       child: Scaffold(

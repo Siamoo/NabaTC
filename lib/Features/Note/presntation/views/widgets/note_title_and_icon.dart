@@ -1,7 +1,7 @@
 
 import 'package:firebase1/Features/Note/data/models/model.dart';
 import 'package:firebase1/Features/Note/presntation/manger/notes_cubit/notes_cubit.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

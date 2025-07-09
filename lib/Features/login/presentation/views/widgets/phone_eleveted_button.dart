@@ -1,6 +1,6 @@
 import 'package:firebase1/Features/login/presentation/manger/phone%20cubit/phone_cubit.dart';
 import 'package:firebase1/Features/login/presentation/views/otp_page.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

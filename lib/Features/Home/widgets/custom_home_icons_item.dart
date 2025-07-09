@@ -1,6 +1,6 @@
 
 
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class CustomHomeIconsItem extends StatelessWidget {

@@ -15,7 +15,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   void loadUser() {
     final user = _auth.currentUser;
     if (user != null) {
-      emit(ProfileLoaded(user: user, phoneNumber: user.phoneNumber ?? '+20 1066036288'));
+      emit(ProfileLoaded(user: user, phoneNumber: user.phoneNumber ?? '01066036288'));
     } else {
       emit(ProfileError("No user logged in"));
     }

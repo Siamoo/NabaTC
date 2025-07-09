@@ -1,17 +1,14 @@
-
-
-
 import 'package:firebase1/Features/API/presentation/views/change_api_link_page.dart';
+import 'package:firebase1/Features/AboutUs/presentation/views/about_us_page.dart';
 import 'package:firebase1/Features/CallUs/presentation/views/call_us_page.dart';
 import 'package:firebase1/Features/Home/home_page.dart';
 import 'package:firebase1/Features/Profile/presentation/views/profile_page.dart';
 import 'package:firebase1/Features/LogOut/presentation/views/logout_page.dart';
 import 'package:firebase1/Features/RateApp/presentation/view/rate_app_page.dart';
-import 'package:firebase1/constant.dart';
-import 'package:firebase1/drawer_page.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
+import 'package:firebase1/core/utils/drawer/drawer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ZoomDrawerPages extends StatefulWidget {
   const ZoomDrawerPages({super.key});
@@ -28,9 +25,10 @@ class _ZoomDrawerPagesState extends State<ZoomDrawerPages> {
     const HomePage(),
     const ProfilePage(),
     const CallUsPage(),
-    const RategAppPage(),
     const LogoutPage(),
-    const ChangeApiLinkPage()
+    const RategAppPage(),
+    const AboutUsPage(),
+    const ChangeApiLinkPage(),
   ];
 
   @override
@@ -43,21 +41,10 @@ class _ZoomDrawerPagesState extends State<ZoomDrawerPages> {
           _controller.toggle!();
         },
       ),
-      mainScreen:
-          // const MainPage(),
-          Scaffold(
+      mainScreen: Scaffold(
         appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text(
-              "plants",
-              style: GoogleFonts.bangers(
-                textStyle: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w500,
-                  color: kOrangeColor,
-                ),
-              ),
-            ),
+            title: Image.asset('asset/images/NabatcLogo.png', height: 34, ),
             backgroundColor: kPrimaryColor,
             actions: [
               IconButton(

@@ -2,7 +2,7 @@ import 'package:firebase1/Features/login/presentation/manger/phone%20cubit/phone
 import 'package:firebase1/Features/login/presentation/views/widgets/phone_eleveted_button.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/phone_logo.dart';
 import 'package:firebase1/Features/login/presentation/views/widgets/phone_text_form_field.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:firebase1/core/helpers/show_snacke_bar_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

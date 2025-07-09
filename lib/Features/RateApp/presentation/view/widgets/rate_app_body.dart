@@ -1,4 +1,4 @@
-import 'package:firebase1/Features/Home/home_page.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -77,8 +77,15 @@ class _RateAppBodyState extends State<RateAppBody> {
             ),
             const SizedBox(height: 24),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: kWhiteColor),
               onPressed: _rating == 0 ? null : _submitRating,
-              child: const Text('Submit'),
+              child: const Text(
+                'send',
+                style: TextStyle(
+                    color: kPrimaryColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
           ],
         ),

@@ -20,10 +20,10 @@ import 'package:firebase1/Features/login/presentation/manger/signin%20cubit/sign
 import 'package:firebase1/Features/login/presentation/views/login_page.dart';
 import 'package:firebase1/Features/login/presentation/views/phone_page.dart';
 import 'package:firebase1/Features/login/presentation/views/sign_page.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:firebase1/firebase_options.dart';
 import 'package:firebase1/simple_bloc_observer.dart';
-import 'package:firebase1/zoom_drawer_page.dart';
+import 'package:firebase1/core/utils/drawer/zoom_drawer_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

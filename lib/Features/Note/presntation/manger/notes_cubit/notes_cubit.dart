@@ -2,7 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase1/Features/Note/data/models/model.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
 import 'package:hive/hive.dart';
 
 import 'package:meta/meta.dart';

@@ -1,9 +1,9 @@
 import 'package:firebase1/Features/Ask/widgets/coustom_ask_text_field.dart';
-import 'package:firebase1/custom_app_bar_title.dart';
+import 'package:firebase1/core/utils/custom_app_bar_title.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase1/Features/Ask/widgets/custom_ask_image.dart';
-import 'package:firebase1/constant.dart';
+import 'package:firebase1/core/utils/constant/constant.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AskBody extends StatefulWidget {
   const AskBody({super.key});
@@ -11,6 +11,8 @@ class AskBody extends StatefulWidget {
   @override
   State<AskBody> createState() => _AskBodyState();
 }
+
+
 
 class _AskBodyState extends State<AskBody> {
   final TextEditingController _plantNameController = TextEditingController();
@@ -35,20 +37,20 @@ class _AskBodyState extends State<AskBody> {
       context: context,
       builder: (_) => AlertDialog(
         title: const Text('Thank You!'),
-        content: Text('Plant Name: $plantName\nYour Question: $question'),
+        content: Text('Plant Name: $plantName\nYour Question: $question?'),
         actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); 
-              Navigator.pop(context); 
-            },
-            child: const Text('Close'),
-          )
+          ElevatedButton.icon(
+            onPressed: () => _openWhatsApp(context,plantName,question),
+            label: Text('Send', style: TextStyle(color: kWhiteColor),),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(double.infinity, 50),
+            ),
+          ),
         ],
       ),
     );
 
-    // Send data to Firebase or your backend API here.
+    // Send data to Firebase or backend API here.
   }
 
   @override
@@ -106,3 +108,29 @@ class _AskBodyState extends State<AskBody> {
     );
   }
 }
+
+
+
+
+  void _openWhatsApp(BuildContext context, String plantName, String question) async {
+    final phone = '201206611795';
+    final allMessage = Uri.encodeComponent("Plant Name: $plantName \nQuestion: $question?");
+    final url = Uri.parse("https://wa.me/$phone?text=$allMessage");
+
+    try {
+      if (await canLaunchUrl(url)) {
+        await launchUrl(
+          url,
+          mode: LaunchMode.externalApplication,
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open WhatsApp.')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+    }
+  }
